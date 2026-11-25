@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anti-Human Trafficking Awareness System</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    color:#333;
+}
+
+header{
+    background:#24364f;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+nav{
+    background:#1b2a3d;
+    padding:10px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffd166;
+}
+
+.quick-exit {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #d90429;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    border: 2px solid white;
+}
+
+.quick-exit:hover {
+    background: #9b001d;
+}
+
+
+section{
+    padding:40px 20px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:25px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+h2{
+    color:#24364f;
+    margin-bottom:15px;
+}
+
+input, textarea, select{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    background:#e63946;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#c1121f;
+}
+
+.result{
+    margin-top:15px;
+    font-weight:bold;
+}
+
+ul{
+    margin-left:20px;
+}
+
+footer{
+    background:#24364f;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+@media(max-width:768px){
+    nav a{
+        display:block;
+        padding:8px;
+    }
+}
+</style>
+</head>
+<body>
+
+<button class="quick-exit" onclick="quickExit()" title="Immediately leave this page">
+    ✕ Quick Exit
+</button>
+
+
+<header>
+    <h1>Anti-Human Trafficking Awareness And Safe Tip-off Information System</h1>
+    <p>Protect • Report • Prevent</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#checker">Red Flag Checker</a>
+    <a href="#tipoff">Tip-Off Form</a>
+    <a href="#helpline">Helpline</a>
+    <a href="#guide">Guide</a>
+</nav>
+
+<section id="home">
+<div class="container">
+<div class="card">
+
+<h2>About the Project</h2>
+
+<p>
+Vulnerable youth, domestic migrant workers, and runaway children frequently
+fall victim to human trafficking cartels, deceptive job offers, and forced labor.
+Many victims fail to recognize warning signs or know where to seek help.
+</p>
+
+<br>
+
+<p>
+This system provides trafficking awareness resources, job recruitment risk
+checking, emergency contacts, and anonymous reporting facilities.
+</p>
+
+<br>
+
+<p><strong>Objective:</strong> Develop a responsive, interactive frontend application.</p>
+
+<br>
+
+<p>
+<strong>Expected Functionality:</strong>
+Job recruitment red-flag checker,
+anonymous tip-off form,
+emergency helpline directory,
+and child protection guide.
+</p>
+
+</div>
+</div>
+</section>
+
+<section id="checker">
+<div class="container">
+<div class="card">
+
+<h2>Job Recruitment Red-Flag Checker</h2>
+
+<label>Does the job require upfront payment?</label>
+<select id="payment">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<label>Is the employer verified?</label>
+<select id="verified">
+    <option>Yes</option>
+    <option>No</option>
+</select>
+
+<label>Was the job offered through suspicious social media messages?</label>
+<select id="social">
+    <option>No</option>
+    <option>Yes</option>
+</select>
+
+<button onclick="checkRisk()">Check Risk</button>
+
+<div class="result" id="riskResult"></div>
+
+</div>
+</div>
+</section>
+
+<section id="tipoff">
+<div class="container">
+<div class="card">
+
+<h2>Anonymous Tip-Off Form</h2>
+
+<form onsubmit="submitTip(event)">
+    <label>Location</label>
+    <input type="text" required>
+
+    <label>Suspicious Activity Details</label>
+    <textarea rows="5" required></textarea>
+
+    <button type="submit">Submit Report</button>
+</form>
+
+<div id="tipMessage"></div>
+
+</div>
+</div>
+</section>
+
+<section id="helpline">
+<div class="container">
+<div class="card">
+
+<h2>Emergency Helpline Directory</h2>
+
+<ul>
+    <li>Police Emergency: 100</li>
+    <li>Women Helpline: 1091</li>
+    <li>Child Helpline: 1098</li>
+    <li>National Emergency: 112</li>
+    <li>Cyber Crime Helpline: 1930</li>
+</ul>
+
+</div>
+</div>
+</section>
+
+<section id="guide">
+<div class="container">
+<div class="card">
+
+<h2>Child Protection Guide</h2>
+
+<ul>
+    <li>Never trust unknown job offers without verification.</li>
+    <li>Share travel details with trusted family members.</li>
+    <li>Avoid handing over identity documents to strangers.</li>
+    <li>Be cautious of promises of high salaries abroad.</li>
+    <li>Contact local authorities immediately if exploitation is suspected.</li>
+    <li>Teach children how to seek help from trusted adults.</li>
+</ul>
+
+</div>
+</div>
+</section>
+
+<footer>
+    <p>© 2026 Anti-Human Trafficking Awareness And Safe Tip-off Information System</p>
+</footer>
+
+<script>
+
+function quickExit() {
+    window.location.replace("https://www.google.com");
+}
+       
+function checkRisk(){
+
+    let payment = document.getElementById("payment").value;
+    let verified = document.getElementById("verified").value;
+    let social = document.getElementById("social").value;
+
+    let risk = 0;
+
+    if(payment === "Yes") risk++;
+    if(verified === "No") risk++;
+    if(social === "Yes") risk++;
+
+    let result = document.getElementById("riskResult");
+
+    if(risk >= 2){
+        result.style.color = "red";
+        result.innerHTML = "⚠️ High Risk: This job offer shows warning signs of possible trafficking or fraud.";
+    }
+    else{
+        result.style.color = "green";
+        result.innerHTML = "✅ Low Risk: Continue verification before accepting the offer.";
+    }
+}
+
+function submitTip(event){
+    event.preventDefault();
+
+    document.getElementById("tipMessage").innerHTML =
+    "<p style='color:green;font-weight:bold;'>✅ Anonymous report submitted successfully.</p>";
+}
+</script>
+
+</body>
+</html>
